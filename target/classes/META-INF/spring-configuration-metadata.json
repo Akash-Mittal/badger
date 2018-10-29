@@ -1,0 +1,37 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges",
+      "type": "com.am.innovations.builder.configurations.yml.BadgesConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges.config",
+      "type": "com.am.innovations.builder.configurations.yml.Config"
+    },
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges.github",
+      "type": "com.am.innovations.builder.configurations.yml.Github"
+    },
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges.lgtm",
+      "type": "com.am.innovations.builder.configurations.yml.Lgtm"
+    },
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges.sonar",
+      "type": "com.am.innovations.builder.configurations.yml.Sonar"
+    },
+    {
+      "sourceType": "com.am.innovations.builder.configurations.yml.BadgesConfiguration",
+      "name": "badges.travis",
+      "type": "com.am.innovations.builder.configurations.yml.Travis"
+    }
+  ]
+}
