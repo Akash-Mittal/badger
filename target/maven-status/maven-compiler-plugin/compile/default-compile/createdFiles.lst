@@ -1,7 +1,0 @@
-com\am\innovations\builder\configurations\SwaggerConfig.class
-com\am\innovations\builder\Application.class
-com\am\innovations\builder\controller\RepoController.class
-com\am\innovations\builder\controller\GitRepoResponses.class
-com\am\innovations\builder\controller\GitRepoResponse.class
-com\am\innovations\builder\controller\Owner.class
-com\am\innovations\builder\controller\License.class
