@@ -2,7 +2,6 @@ package com.am.innovations.badger.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import com.am.innovations.badger.API;
 import com.am.innovations.badger.configurations.yml.BadgesConfiguration;
 import com.am.innovations.badger.dto.git.GitRepoResponse;
+import com.am.innovations.badger.enums.OPS;
 
 @Service
 public class RepoService {
@@ -27,34 +27,10 @@ public class RepoService {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	public String getAllGithubBadgesByUserName(final String user) throws URISyntaxException {
+	public String getAllRepoBadgesByUserName(final String user, OPS ops) throws URISyntaxException {
 		final ResponseEntity<GitRepoResponse[]> response = callGitHub(user);
-		final StringBuilder stringBuilder = new StringBuilder();
-		Arrays.stream(response.getBody()).forEach(repo -> {
-			stringBuilder.append(
-					badgesConfiguration.getGithub().getIssues().replace(API.URL_PLACE_HOLDER_REPO_NAME, repo.getName()))
-					.append("\n");
-			stringBuilder.append(
-					badgesConfiguration.getGithub().getForks().replace(API.URL_PLACE_HOLDER_REPO_NAME, repo.getName()))
-					.append("\n");
-			stringBuilder.append(badgesConfiguration.getGithub().getLicense().replace(API.URL_PLACE_HOLDER_REPO_NAME,
-					repo.getName())).append("\n");
-			stringBuilder.append(
-					badgesConfiguration.getGithub().getStars().replace(API.URL_PLACE_HOLDER_REPO_NAME, repo.getName()))
-					.append("\n");
-		});
-		return stringBuilder.toString();
-	}
+		return ops.apply(response, badgesConfiguration);
 
-	public String getAllSonarBadgesByUserName(final String user) throws URISyntaxException {
-		final ResponseEntity<GitRepoResponse[]> response = callGitHub(user);
-		final StringBuilder stringBuilder = new StringBuilder();
-		Arrays.stream(response.getBody()).forEach(repo -> {
-			stringBuilder.append(
-					badgesConfiguration.getSonar().getMeasure().replace(API.URL_PLACE_HOLDER_REPO_NAME, repo.getName()))
-					.append("\n");
-		});
-		return stringBuilder.toString();
 	}
 
 	public ResponseEntity<GitRepoResponse[]> callGitHub(final String userName) throws URISyntaxException {
