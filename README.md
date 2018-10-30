@@ -1,4 +1,4 @@
-# Builds Badges for Github, Soanar, lgtm and Travis.
+# Builds Badges for Github, Sonar, lgtm and Travis.
 
 
 [![Build Status](https://travis-ci.org/Akash-Mittal/badger.svg?branch=master)](https://travis-ci.org/Akash-Mittal/badger)
