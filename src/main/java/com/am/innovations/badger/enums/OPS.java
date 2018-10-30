@@ -75,8 +75,11 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
 	ALL {
 		@Override
 		public String apply(ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration u) {
-			throw new RuntimeException("Operation Not Supported.");
-
+			final StringBuilder stringBuilder = new StringBuilder();
+			Arrays.stream(OPS.values()).filter(val -> !(val.name().equalsIgnoreCase(OPS.ALL.name()))).forEach(ops -> {
+				stringBuilder.append("### " + ops.name()).append(System.lineSeparator()).append(ops.apply(t, u));
+			});
+			return stringBuilder.toString();
 		}
 
 	};
