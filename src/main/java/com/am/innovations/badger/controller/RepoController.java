@@ -37,4 +37,15 @@ public class RepoController {
 		return stringBuilder.toString();
 	}
 
+	@GetMapping(API.GET_ALL_REPOS_GITHUB_BADGES_BY_USERNAME)
+	public String getAllGithubBadgesByUserName(@NonNull @PathVariable(value = "user") String user)
+			throws URISyntaxException {
+		return repoService.getAllGithubBadgesByUserName(user);
+	}
+
+	@GetMapping(API.GET_ALL_REPOS_SONAR_BADGES_BY_USERNAME)
+	public String getAllSonarBadgesByUserName(@PathVariable(value = "user") String user) throws URISyntaxException {
+		return repoService.getAllSonarBadgesByUserName(user);
+	}
+
 }
