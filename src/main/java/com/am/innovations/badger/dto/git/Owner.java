@@ -1,5 +1,5 @@
 
-package com.am.innovations.badger.controller;
+package com.am.innovations.badger.dto.git;
 
 import java.io.Serializable;
 import org.apache.commons.lang.builder.EqualsBuilder;
