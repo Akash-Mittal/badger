@@ -40,7 +40,7 @@ badges:
     status: "[![Build Status](https://travis-ci.org/Akash-Mittal/REPONAME.svg?branch=master)](https://travis-ci.org/Akash-Mittal/REPONAME)"
   config:
     placeholder: REPONAME
-    githubreposapiurl: "https://api.github.com/users/userName/repos"
+    githubreposapiurl: "https://api.github.com/users/USERNAME/repos"
 ---
 
 spring:
