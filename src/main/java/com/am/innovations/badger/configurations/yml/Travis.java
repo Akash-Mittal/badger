@@ -5,14 +5,14 @@ import java.io.Serializable;
 
 public class Travis implements Serializable {
 
-	private Object status;
+	private String status;
 	private final static long serialVersionUID = 8930122196678162696L;
 
-	public Object getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Object status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 

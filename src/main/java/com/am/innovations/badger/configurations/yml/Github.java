@@ -8,6 +8,7 @@ public class Github implements Serializable {
 	private String forks;
 	private String stars;
 	private String license;
+	private String clone;
 
 	private final static long serialVersionUID = -3610764364456845316L;
 
@@ -41,6 +42,14 @@ public class Github implements Serializable {
 
 	public void setLicense(String license) {
 		this.license = license;
+	}
+
+	public String getClone() {
+		return clone;
+	}
+
+	public void setClone(String clone) {
+		this.clone = clone;
 	}
 
 }
