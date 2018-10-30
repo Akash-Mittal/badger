@@ -5,13 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.am.innovations</groupId>
-	<artifactId>builder</artifactId>
+	<artifactId>badger</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>(Automations) Builder Project</name>
+	<name>(Automations) Badger</name>
 	<url>http://maven.apache.org</url>
-	<description>Generates Git Hub Badges, Github Clone Scripts.</description>
+	<description>Generates Git Hub Badges</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -80,5 +80,22 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+	
+	
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass> com.am.innovations.badger.Application</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
