@@ -1,4 +1,4 @@
-package com.am.innovations.badger.service;
+package com.am.innovations.badger.client;
 
 import java.net.URI;
 import java.net.URISyntaxException;

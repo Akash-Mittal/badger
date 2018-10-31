@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import com.am.innovations.badger.API;
 import com.am.innovations.badger.configurations.yml.BadgesConfiguration;
 import com.am.innovations.badger.dto.git.GitRepoResponse;
-import com.am.innovations.badger.enums.OPS;
 import com.am.innovations.badger.exception.RestClientException;
 import com.am.innovations.badger.service.RestClient;
 
@@ -26,7 +25,7 @@ public class RepoRepository {
 	@Autowired
 	private RestClient restClient;
 
-	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserName(final String user, OPS ops) {
+	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserName(final String user) {
 		Optional<ResponseEntity<GitRepoResponse[]>> response = Optional.empty();
 		try {
 			response = restClient.get(badgesConfiguration.getConfig().getGithubreposapiurl()

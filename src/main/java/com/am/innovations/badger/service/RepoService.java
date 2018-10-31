@@ -25,7 +25,7 @@ public class RepoService {
 	public String getAllRepoBadgesByUserName(final String user, OPS ops) {
 		StringBuilder builder = new StringBuilder();
 		try {
-			repoRepository.getAllRepoBadgesByUserName(user, ops).ifPresentOrElse(val -> {
+			repoRepository.getAllRepoBadgesByUserName(user).ifPresentOrElse(val -> {
 				if (Validators.checkIfEqualsTo.test(val.getStatusCode().value(), HttpStatus.OK.value())) {
 					builder.append(ops.apply(val, badgesConfiguration));
 				} else {
