@@ -22,8 +22,8 @@ public class RepoService {
 	@Autowired
 	private RepoRepository repoRepository;
 
-	public String getAllRepoBadgesByUserName(final String user, OPS ops) {
-		StringBuilder builder = new StringBuilder();
+	public String getAllRepoBadgesByUserName(final String user, final OPS ops) {
+		final StringBuilder builder = new StringBuilder();
 		try {
 			repoRepository.getAllRepoBadgesByUserName(user).ifPresentOrElse(val -> {
 				if (Validators.checkIfEqualsTo.test(val.getStatusCode().value(), HttpStatus.OK.value())) {
@@ -36,6 +36,7 @@ public class RepoService {
 			});
 		} catch (DataException e) {
 			logger.error("Exception While Getting Data: {}", e);
+			builder.append("Exception While Getting Data: {}" + e.getMessage());
 		}
 		return builder.toString();
 

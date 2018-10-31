@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.am.innovations.badger.API;
+import com.am.innovations.badger.client.RestClient;
 import com.am.innovations.badger.configurations.yml.BadgesConfiguration;
 import com.am.innovations.badger.dto.git.GitRepoResponse;
 import com.am.innovations.badger.exception.RestClientException;
-import com.am.innovations.badger.service.RestClient;
 
 @Component
 public class RepoRepository {
