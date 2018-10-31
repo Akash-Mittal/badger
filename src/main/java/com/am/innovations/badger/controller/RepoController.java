@@ -32,7 +32,7 @@ public class RepoController {
 	private RepoService repoService;
 
 	@GetMapping(API.GET_ALL_REPOS_BADGES_BY_USER_NAME)
-	@ApiOperation(value = "Get Badges URL fir github repo by username", notes = "", response = String.class)
+	@ApiOperation(value = "Get Badges URL for github repo by username", notes = "", response = String.class)
 	public String getBadgesByUserName(
 			@NonNull @Size(min = 3, max = 50) @PathVariable(value = "username") String username,
 			@RequestParam("facility") OPS ops) throws URISyntaxException {
