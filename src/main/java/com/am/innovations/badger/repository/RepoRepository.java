@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,8 @@ public class RepoRepository {
 	@Autowired
 	private RestClient restClient;
 
+	@Cacheable("users")
+//	@CachePut("users")
 	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserName(final String user) {
 		Optional<ResponseEntity<GitRepoResponse[]>> response = Optional.empty();
 		try {
@@ -34,7 +37,6 @@ public class RepoRepository {
 			logger.error("Exception While Calling API: {}", e);
 		}
 		return response;
-
 	}
 
 }

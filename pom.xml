@@ -79,6 +79,13 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.Akash-Mittal</groupId>
+			<artifactId>commons</artifactId>
+			<version>master-SNAPSHOT</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -90,5 +97,10 @@
 		</plugins>
 	</build>
 
-
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 </project>
