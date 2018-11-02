@@ -34,12 +34,14 @@ public class RepoService {
 			}, () -> {
 				builder.append("Not Found !!");
 			});
+
 		} catch (DataException e) {
 			logger.error("Exception While Getting Data: {}", e);
 			builder.append("Exception While Getting Data: {}" + e.getMessage());
+		} finally {
+			repoRepository.getAllRepoBadgesByUserNameAndPutInCache(user);
 		}
 		return builder.toString();
-
 	}
 
 }
