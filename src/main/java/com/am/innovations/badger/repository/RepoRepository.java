@@ -45,19 +45,16 @@ public class RepoRepository {
 
 	@CachePut("users")
 	@Async
-	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserNameAndPutInCache(final String user) {
+	public void getAllRepoBadgesByUserNameAndPutInCache(final String user) {
 		Optional<ResponseEntity<GitRepoResponse[]>> response = Optional.empty();
 		logger.info("User: {},Getting and Updating it to Cache Asynchronously", user);
 		try {
 			response = restClient.get(badgesConfiguration.getConfig().getGithubreposapiurl()
 					.replace(API.URL_PLACE_HOLDER_USER_NAME, user));
-			return CompletableFuture.completedFuture(response).get();
+			CompletableFuture.completedFuture(response);
 		} catch (RestClientException e) {
 			logger.error("Exception While Calling API: {}", e);
-		} catch (InterruptedException | ExecutionException e) {
-			logger.error("Exception While Calling API: {}", e);
 		}
-		return Optional.empty();
 
 	}
 
