@@ -52,4 +52,4 @@ badges:
     status: "[![Build Status](https://travis-ci.org/USERNAME/REPONAME.svg?branch=master)](https://travis-ci.org/USERNAME/REPONAME)"
   config:
     placeholder: REPONAME
-    githubreposapiurl: "https://api.github.com/users/USERNAME/repos"
+    githubreposapiurl: "https://api.github.com/users/USERNAME/repos?per_page=100"
