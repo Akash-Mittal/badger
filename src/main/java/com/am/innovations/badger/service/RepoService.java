@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.am.innovations.badger.configurations.yml.BadgesConfiguration;
 import com.am.innovations.badger.enums.OPS;
-import com.am.innovations.badger.exception.DataException;
 import com.am.innovations.badger.repository.RepoRepository;
 import com.am.innovations.validations.Validators;
 
@@ -35,7 +34,7 @@ public class RepoService {
 				builder.append("Not Found !!");
 			});
 
-		} catch (DataException e) {
+		} catch (Exception e) {
 			logger.error("Exception While Getting Data: {}", e);
 			builder.append("Exception While Getting Data: {}" + e.getMessage());
 		} finally {
