@@ -1,12 +1,16 @@
 package com.am.innovations.badger.repository;
 
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import com.am.innovations.badger.API;
@@ -27,9 +31,9 @@ public class RepoRepository {
 	private RestClient restClient;
 
 	@Cacheable("users")
-//	@CachePut("users")
 	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserName(final String user) {
 		Optional<ResponseEntity<GitRepoResponse[]>> response = Optional.empty();
+		logger.info("User: {} Not Found in Cache", user);
 		try {
 			response = restClient.get(badgesConfiguration.getConfig().getGithubreposapiurl()
 					.replace(API.URL_PLACE_HOLDER_USER_NAME, user));
@@ -37,6 +41,24 @@ public class RepoRepository {
 			logger.error("Exception While Calling API: {}", e);
 		}
 		return response;
+	}
+
+	@CachePut("users")
+	@Async
+	public Optional<ResponseEntity<GitRepoResponse[]>> getAllRepoBadgesByUserNameAndPutInCache(final String user) {
+		Optional<ResponseEntity<GitRepoResponse[]>> response = Optional.empty();
+		logger.info("User: {},Getting and Updating it to Cache Asynchronously", user);
+		try {
+			response = restClient.get(badgesConfiguration.getConfig().getGithubreposapiurl()
+					.replace(API.URL_PLACE_HOLDER_USER_NAME, user));
+			return CompletableFuture.completedFuture(response).get();
+		} catch (RestClientException e) {
+			logger.error("Exception While Calling API: {}", e);
+		} catch (InterruptedException | ExecutionException e) {
+			logger.error("Exception While Calling API: {}", e);
+		}
+		return Optional.empty();
+
 	}
 
 }
