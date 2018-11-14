@@ -8,7 +8,8 @@ public class Github implements Serializable {
 	private String forks;
 	private String stars;
 	private String license;
-	private String clone;
+	private String cloneSSH;
+	private String cloneHTTP;
 
 	private final static long serialVersionUID = -3610764364456845316L;
 
@@ -44,12 +45,21 @@ public class Github implements Serializable {
 		this.license = license;
 	}
 
-	public String getClone() {
-		return clone;
+	public String getCloneSSH() {
+		return cloneSSH;
 	}
 
-	public void setClone(String clone) {
-		this.clone = clone;
+	public void setCloneSSH(String cloneSSH) {
+		this.cloneSSH = cloneSSH;
 	}
+
+	public String getCloneHTTP() {
+		return cloneHTTP;
+	}
+
+	public void setCloneHTTP(String cloneHTTP) {
+		this.cloneHTTP = cloneHTTP;
+	}
+
 
 }

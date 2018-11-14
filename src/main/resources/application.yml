@@ -16,8 +16,8 @@ badges:
     forks: "[![GitHub forks](https://img.shields.io/github/forks/USERNAME/REPONAME.svg)](https://github.com/USERNAME/REPONAME/network)"
     stars:  "[![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPONAME.svg)](https://github.com/USERNAME/REPONAME/stargazers)"
     license:  "[![GitHub license](https://img.shields.io/github/license/USERNAME/REPONAME.svg)](https://github.com/USERNAME/REPONAME/blob/master/LICENSE)"
-    clone: "git clone git@github.com:USERNAME/REPONAME.git"
-    clone-http: "git clone git@github.com:USERNAME/REPONAME.git"
+    clone-ssh: "git clone git@github.com:USERNAME/REPONAME.git"
+    clone-http: "git clone https://www.github.com/USERNAME/REPONAME.git"
   sonar:
     measure: "[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=USERNAME_REPONAME&metric=alert_status)](https://sonarcloud.io/dashboard?id=USERNAME_REPONAME)"
   lgtm:
