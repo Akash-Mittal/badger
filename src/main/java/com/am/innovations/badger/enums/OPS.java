@@ -76,7 +76,7 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, final BadgesConfiguration u) {
             final StringBuilder stringBuilder = new StringBuilder();
-            Arrays.stream(OPS2.values()).filter(val -> !(val.name().equalsIgnoreCase(OPS2.ALL.name()))).forEach(ops -> {
+            Arrays.stream(OPS.values()).filter(val -> !(val.name().equalsIgnoreCase(OPS.ALL.name()))).forEach(ops -> {
                 stringBuilder.append("### " + ops.name()).append(System.lineSeparator()).append(ops.apply(t, u));
             });
             return stringBuilder.toString();
