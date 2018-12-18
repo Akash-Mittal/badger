@@ -14,7 +14,7 @@ public class License implements Serializable
     private String spdxId;
     private String url;
     private String nodeId;
-    private final static long serialVersionUID = -1610797039784645790L;
+    private static final long serialVersionUID = -1610797039784645790L;
 
     public String getKey() {
         return key;

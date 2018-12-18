@@ -81,7 +81,7 @@ public class GitRepoResponse implements Serializable
     private Integer openIssues;
     private Integer watchers;
     private String defaultBranch;
-    private final static long serialVersionUID = 4714793014068196917L;
+    private static final long serialVersionUID = 4714793014068196917L;
 
     public Integer getId() {
         return id;
