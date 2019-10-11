@@ -11,7 +11,7 @@ import com.am.innovations.badger.dto.git.GitRepoResponse;
 
 public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesConfiguration, String> {
 
-    GITHUB {
+    GITHUB_BADGES_ALL_REPO {
 
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration badgesConfiguration) {
@@ -26,7 +26,7 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
         }
 
     },
-    SONAR {
+    SONAR_BADGES_ALL_REPO {
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration badgesConfiguration) {
             final StringBuilder stringBuilder = new StringBuilder();
@@ -37,7 +37,7 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
         }
 
     },
-    TRAVIS {
+    TRAVIS_BADGES_ALL_REPO {
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration badgesConfiguration) {
             final StringBuilder stringBuilder = new StringBuilder();
@@ -48,7 +48,7 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
         }
 
     },
-    LGTM {
+    LGTM_BADGES_ALL_REPO {
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration badgesConfiguration) {
             final StringBuilder stringBuilder = new StringBuilder();
@@ -60,7 +60,7 @@ public enum OPS implements BiFunction<ResponseEntity<GitRepoResponse[]>, BadgesC
         }
 
     },
-    CLONE {
+    GITHUB_CLONE_ALL_REPOS {
         @Override
         public String apply(final ResponseEntity<GitRepoResponse[]> t, BadgesConfiguration badgesConfiguration) {
             final StringBuilder stringBuilder = new StringBuilder();
