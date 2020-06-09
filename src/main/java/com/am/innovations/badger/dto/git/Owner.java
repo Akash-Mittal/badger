@@ -27,7 +27,7 @@ public class Owner implements Serializable
     private String receivedEventsUrl;
     private String type;
     private Boolean siteAdmin;
-    private final static long serialVersionUID = 4177948137975980653L;
+    private static final long serialVersionUID = 4177948137975980653L;
 
     public String getLogin() {
         return login;

@@ -25,4 +25,3 @@ https://badgerr.herokuapp.com/swagger-ui.html#/
 	* https://spring.io/guides/gs/caching/
 * Rest Async Operations.
 	* https://spring.io/guides/gs/async-method/
-	* 

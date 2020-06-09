@@ -35,13 +35,6 @@ public class RepoController {
     @Autowired
     private RepoService repoService;
 
-    @GetMapping(API.GET_ALL_REPOS_BADGES_BY_USER_NAME)
-    @ApiOperation(value = "Get Badges URL for github repo by username", notes = "", response = String.class)
-    public String getBadgesByUserName(
-            @NonNull @Size(min = 3, max = 50) @PathVariable(value = "username") String username,
-            @RequestParam("facility") OPS ops) throws URISyntaxException {
-        return repoService.getAllRepoBadgesByUserName(username, ops);
-    }
 
     @GetMapping("/json/{size}")
     @ApiOperation(value = "Get Json Array With Given Size", notes = "", response = String.class)
