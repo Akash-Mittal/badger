@@ -19,6 +19,13 @@
 
 https://badgerr.herokuapp.com/swagger-ui.html#/
 
+ON LOCAL
+
+http://localhost:8081/swagger-ui.html#/
+
+Note: Before To running please add following VM Args
+--add-opens java.base/java.lang=ALL-UNNAMED
+
 ## Reference.
 * Caching 
 	* https://www.foreach.be/blog/spring-cache-annotations-some-tips-tricks
